@@ -1,0 +1,59 @@
+h2 {
+    color:black;
+    font-style: normal;
+}
+
+
+body {
+    background-image: url(BYTESQUAD.jpg);
+    background-size: cover;
+    background-position: 0svw;
+    background-repeat: no-repeat;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f4;
+   
+}
+
+.container {
+    background: transparent;
+    padding: 20px;
+    border-radius: 40px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 1);
+    text-align: center;
+    width: 300px;
+
+}
+
+input, select, button {
+    width: 100%;
+    margin: 5px 0;
+    padding: 10px;
+    font-size: 16px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    border-width: 1px;
+    border-style:solid;
+    border-color: rgb(150, 17, 17);
+}
+
+button {
+    background: rgb(196, 108, 108);
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+button:disabled {
+    background: rgb(196, 108, 108);
+    cursor: not-allowed;
+}
+
+.message {
+    margin-top: 10px;
+    font-weight: bold;
+}

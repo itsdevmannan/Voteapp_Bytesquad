@@ -1,0 +1,38 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image:url(BYTESQUAD.jpg);
+    background-size: cover;
+    background-position: 0svw;
+    background-repeat: no-repeat;
+    margin: 0;
+}
+
+.container {
+    background:transparent;
+    padding: 20px;
+    border-radius: 40px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 1);
+    text-align: center;
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+canvas {
+    max-width: 250px;
+    max-height: 250px;
+    width: 100%;
+    height: auto;
+}
+button {
+    background: rgb(196, 108, 108);
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 10px;
+}

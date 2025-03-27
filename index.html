@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voting System</title>
+    <link rel="stylesheet" href="uwu.css">
+</head>
+<body>
+
+    <div class="container">
+        <h2>Vote for a Party</h2>
+        <form id="voteForm">
+            <input type="text" name="voter_id" id="voterId" placeholder="Enter Voter ID" required>
+            
+            <select name="party" id="party" required>
+                <option value="">Select a party</option>
+                <option value="BJP">BJP</option>
+                <option value="AAP">AAP</option>
+                <option value="CONGRESS">CONGRESS</option>
+                <option value="NOTA">NOTA</option>
+            </select>
+
+            <button type="submit" id="voteBtn">Submit Vote</button>
+        </form>
+
+        <p class="message" id="messageBox"></p>
+
+        <!-- Show Results Button (Initially Disabled) -->
+        <button id="resultsBtn" onclick="window.location.href='results.html'" disabled>Show Results</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
