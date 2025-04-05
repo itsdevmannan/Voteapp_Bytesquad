@@ -8,7 +8,7 @@ document.getElementById('voteForm').addEventListener('submit', async function(ev
 
     try {
         // Validate Aadhaar ID before submitting the vote
-        let validateResponse = await fetch(`http://127.0.0.1:8080/validate-adhaar/${adhaarId}`);
+        let validateResponse = await fetch(`https://voteapp-bytesquad.onrender.com/${adhaarId}`);
         let validateData = await validateResponse.json();
 
         if (!validateResponse.ok) {
@@ -18,7 +18,7 @@ document.getElementById('voteForm').addEventListener('submit', async function(ev
         }
 
         // Make the POST request to store the vote
-        let response = await fetch("http://127.0.0.1:8080/vote", {
+        let response = await fetch("https://voteapp-bytesquad.onrender.com/vote", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
