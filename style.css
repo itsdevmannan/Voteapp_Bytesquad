@@ -1,0 +1,167 @@
+:root {
+    --grey: #f5f5f5;
+    --blue: #3d88f9;
+    --black: #1a1a1a;
+}
+
+body.chat-open {
+    .chat-window {
+        display: flex;
+    }
+}
+
+.chat-button {
+    position: absolute;
+    bottom: 60px;
+    right: 20px;
+    z-index: 998;
+    background-color: var(--black);
+    color: white;
+    height: 80px;
+    width: 80px;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+
+    img {
+        width: 50px;
+    }
+
+    &:hover {
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    }
+}
+
+.chat-window {
+
+    * {
+        font-family: "Raleway", sans-serif;
+    }
+    
+    display: none;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    background-color: white;
+    border-radius: 20px;
+    overflow: hidden;
+    position: absolute;
+    z-index: 999;
+    bottom: 30px;
+    right: 20px;
+    height: 600px;
+    width: 360px;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .close {
+        background: rgb(196, 108, 108);
+        color: white;
+        border: none;
+        cursor: pointer;
+        border-radius: 20px 20px 0 0;
+        padding: 5px;
+        margin: 0px;
+    }
+
+    .chat {
+        flex: 1;
+        padding: 0 8px;
+        overflow-y: scroll;
+
+        p {
+            border-radius: 20px;
+            width: 80%;
+            margin: 8px 0;
+            font-size: 16px;
+            padding: 16px;
+        }
+
+        div.model {
+
+            p {
+                background-color: var(--grey);
+            }
+
+            
+        }
+
+        div.user {
+            display: flex;
+            justify-content: flex-end;
+
+            p {
+                background-color: var(--blue);
+                color: white;
+            }
+        }
+
+        div.error {
+            p {
+                font-size: 14px;
+                text-align: center;
+                color: red;
+            }
+        }
+        
+    }
+
+    .input-area {
+        height: 70px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0 8px;
+        border-top: 1px solid lightgray;
+
+        input {
+            height: 40px;
+            flex: 1;
+            border: none;
+            background-color: var(--grey);
+            border-radius: 20px;
+            padding-left: 20px;
+            font-size: 16px;
+        }
+
+        button {
+            height: 40px;
+            width: 40px;
+            border-radius: 100%;
+            border: none;
+            margin-left: 12px;
+            background-color: var(--blue);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+
+            img {
+                width: 18px;
+            }
+
+            &:hover {
+                box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+            }
+        }
+    }
+}
+
+body.dark-mode .input-area input {
+    color: black; /* Set the text color for dark mode */
+}
+
+body.dark-mode .chat-window p {
+    color: black;
+}
+
+.loader {
+    width: 40px;
+    opacity: 0.4;
+    aspect-ratio: 4;
+    background: radial-gradient(circle closest-side,#000 90%,#0000) 0/calc(100%/3) 100% space;
+    clip-path: inset(0 100% 0 0);
+    animation: l1 1.5s steps(4) infinite;
+  }
+  @keyframes l1 {to{clip-path: inset(0 -34% 0 0)}}

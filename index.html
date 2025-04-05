@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Voting System</title>
     <link rel="stylesheet" href="uwu.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -33,6 +37,36 @@
     </div>
 
     <button id="darkModeToggle" class="dark-mode-btn">&#9728;</button>
+    <section class="chat-window">
+        <button class="close">close</button>
+        <div class="chat">
+            <div class="model">
+                <p>Hi, how can I help you?</p>
+            </div>
+            
+        </div>
+        <div class="input-area">
+            <input placeholder="Ask me anything..." type="text">
+            <button>
+                <img src="send-icon.png" alt="send">
+            </button>
+        </div>
+    </section>
+
+    <div class="chat-button">
+        <img src="chat-icon.png" alt="start chat">
+    </div>
+
+    <script type="importmap">
+        {
+          "imports": {
+            "@google/generative-ai": "https://esm.run/@google/generative-ai"
+          }
+        }
+    </script>
+    
+    <script type="module" src="main.js"></script>
+    
 
     <script src="script.js"></script>
 </body>

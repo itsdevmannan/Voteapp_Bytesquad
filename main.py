@@ -45,6 +45,15 @@ async def vote(request: web.Request) -> web.Response:
         if not user:
             return web.json_response({"error": "Invalid Aadhaar ID"})
 
+    # Check if the Aadhaar ID has already been used to vote
+    async with request.app.db.execute(
+        "SELECT voter_id FROM users WHERE adhaar_id = ?", (adhaar_id,)
+    ) as cursor:
+        existing_vote = await cursor.fetchone()
+
+    if existing_vote:
+        return web.json_response({"error": "Aadhaar ID has already been used to vote"}, status=400)
+
     # Check if the voter has remaining votes
     async with request.app.db.execute(
         "SELECT remaining_votes FROM users WHERE voter_id = ?", (voter_id,)
