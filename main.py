@@ -125,27 +125,13 @@ async def validate_adhaar(request: web.Request) -> web.Response:
 cors = setup(
     app,
     defaults={
-        "https://voteapp-bytesquad.vercel.app": ResourceOptions(
-            allow_credentials=True,
-            expose_headers="*",
-            allow_headers="*",
-            allow_methods="*",
-        ),
-        "http://localhost:3000": ResourceOptions(  # Allow localhost for testing
-            allow_credentials=True,
-            expose_headers="*",
-            allow_headers="*",
-            allow_methods="*",
-        ),
         "*": ResourceOptions(
             allow_credentials=True,
             expose_headers="*",
             allow_headers="*",
-            allow_methods="*",
-        ),
+        )
     },
 )
-
 app.add_routes(routes)
 
 for route in list(app.router.routes()):

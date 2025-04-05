@@ -1,5 +1,5 @@
 async function fetchResults() {
-    let response = await fetch("https://voteapp-bytesquad.onrender.com/");
+    let response = await fetch("http://127.0.0.1:8080/votes");
     let data = await response.json();
 
     if (data.error) {
