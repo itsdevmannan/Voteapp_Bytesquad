@@ -9,10 +9,17 @@ body {
     background-position: 0svw;
     background-repeat: no-repeat;
     margin: 0;
+    /* Add transition for smooth fade-in effect */
+    transition: background-color 0.5s ease, color 0.5s ease, background-image 0.5s ease;
+}
+
+body.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
 }
 
 .container {
-    background:transparent;
+    background: transparent;
     padding: 20px;
     border-radius: 40px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 1);
@@ -21,6 +28,12 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    /* Add transition for smooth shadow change */
+    transition: box-shadow 0.5s ease;
+}
+
+body.dark-mode .container {
+    box-shadow: 0 0 10px white;
 }
 
 canvas {
@@ -28,11 +41,57 @@ canvas {
     max-height: 250px;
     width: 100%;
     height: auto;
+    padding-bottom: 10px;
+
 }
+
+body.dark-mode canvas {
+    padding-bottom: 10px;
+}
+
 button {
     background: rgb(196, 108, 108);
     color: white;
     border: none;
     cursor: pointer;
     border-radius: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+body.dark-mode button {
+    background: rgb(196, 108, 108);
+    color: #ffffff;
+    transition: background-color 0.5s ease, color 0.5s ease;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+.dark-mode-btn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #000000;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    transition: background-color 0.5s ease, color 0.5s ease, box-shadow 0.5s ease;
+}
+
+body.dark-mode .dark-mode-btn {
+    background-color: #ffffff;
+    color: black;
+    box-shadow: 0 0 5px white;
 }

@@ -28,6 +28,16 @@ async function fetchResults() {
     });
 }
 
+// Load dark mode state from localStorage on page load
+if (localStorage.getItem('darkMode') === 'enabled') {
+    document.body.classList.add('dark-mode');
+    document.querySelectorAll('button').forEach(element => {
+        element.classList.add('dark-mode');
+    });
+    document.body.style.backgroundImage = "url('BYTESQUAD_DARK.jpg')"; // Set dark mode background
+    document.getElementById('darkModeToggle').innerHTML = "&#9790;"; // Moon symbol for dark mode
+}
+
 function delayGoBack() {
     const timerMessage = document.getElementById("timerMessage");
     let countdown = 10;
@@ -44,5 +54,23 @@ function delayGoBack() {
 }
 
 document.getElementById("goBackBtn").addEventListener("click", delayGoBack);
+
+// Update dark mode state on toggle
+document.getElementById('darkModeToggle').addEventListener('click', () => {
+    document.body.classList.toggle('dark-mode');
+    document.querySelectorAll('button').forEach(element => {
+        element.classList.toggle('dark-mode');
+    });
+
+    if (document.body.classList.contains('dark-mode')) {
+        document.body.style.backgroundImage = "url('BYTESQUAD_DARK.jpg')"; // Set dark mode background
+        document.getElementById('darkModeToggle').innerHTML = "&#9790;";
+        localStorage.setItem('darkMode', 'enabled');
+    } else {
+        document.body.style.backgroundImage = "url('BYTESQUAD.jpg')"; // Set light mode background
+        document.getElementById('darkModeToggle').innerHTML = "&#9728;";
+        localStorage.setItem('darkMode', 'disabled');
+    }
+});
 
 fetchResults();

@@ -3,6 +3,9 @@ h2 {
     font-style: normal;
 }
 
+body.dark-mode h2 {
+    color: white;
+}
 
 body {
     background-image: url(BYTESQUAD.jpg);
@@ -15,7 +18,12 @@ body {
     align-items: center;
     height: 100vh;
     background-color: #f4f4f4;
-   
+    transition: background-color 0.5s ease, color 0.5s ease, background-image 0.5s ease;
+}
+
+body.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
 }
 
 .container {
@@ -25,7 +33,11 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 1);
     text-align: center;
     width: 300px;
+    transition: box-shadow 0.5s ease;
+}
 
+body.dark-mode .container {
+    box-shadow: 0 0 10px white;
 }
 
 input, select, button {
@@ -38,6 +50,13 @@ input, select, button {
     border-width: 1px;
     border-style:solid;
     border-color: rgb(150, 17, 17);
+    transition: background-color 0.5s ease, color 0.5s ease, border-color 0.5s ease;
+}
+
+input.dark-mode, select.dark-mode {
+    background-color: #333333;
+    color: #ffffff;
+    border: 1px solid #555555;
 }
 
 button {
@@ -46,6 +65,12 @@ button {
     border: none;
     cursor: pointer;
     border-radius: 10px;
+    transition: background-color 0.5s ease, color 0.5s ease, border-color 0.5s ease;
+}
+
+button.dark-mode {
+    background-color: #333333;
+    color: #ffffff;
 }
 
 button:disabled {
@@ -56,4 +81,34 @@ button:disabled {
 .message {
     margin-top: 10px;
     font-weight: bold;
+    transition: background-color 0.5s ease, color 0.5s ease, border-color 0.5s ease;
+}
+
+message.dark-mode {
+    color: #ffffff;
+}
+
+.dark-mode-btn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #000000;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    transition: background-color 0.5s ease, color 0.5s ease, box-shadow 0.5s ease;
+}
+
+body.dark-mode .dark-mode-btn {
+    background-color: #ffffff;
+    color: black;
+    box-shadow: 0 0 5px white;
 }

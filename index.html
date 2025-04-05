@@ -13,6 +13,8 @@
         <form id="voteForm">
             <input type="text" name="voter_id" id="voterId" placeholder="Enter Voter ID" required>
             
+            <input type="text" name="adhaar_id" id="adhaarId" placeholder="Enter Aadhaar ID" required>
+            
             <select name="party" id="party" required>
                 <option value="">Select a party</option>
                 <option value="BJP">BJP</option>
@@ -29,6 +31,8 @@
         <!-- Show Results Button (Initially Disabled) -->
         <button id="resultsBtn" onclick="window.location.href='results.html'" disabled>Show Results</button>
     </div>
+
+    <button id="darkModeToggle" class="dark-mode-btn">&#9728;</button>
 
     <script src="script.js"></script>
 </body>
