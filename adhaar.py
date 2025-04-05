@@ -12,7 +12,7 @@ async def create_database():
         """)
 
         dummy_data = [
-            ("34567"8923456, "Ahmad"),
+            ("345678923456", "Ahmad"),
             ("987537591264", "Zainab"),
             ("495624102934", "Mannan"),
             ("041838612038", "Anya"),
