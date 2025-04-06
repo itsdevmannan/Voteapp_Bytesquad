@@ -41,26 +41,6 @@ A simple and interactive web-based voting app where users can cast votes and vie
 
 ---
 
-## 📂 Folder Structure
-voting-app/
-├── .git/
-├── .vscode/
-├── adhaar/
-├── BYTE_SQUAD/
-├── chat-icon/
-├── db.sqlite
-├── voter.sqlite
-├── index/
-├── main/
-├── result/
-├── results/
-├── script/
-├── style/
-├── send-icon/
-├── test_client/
-├── uwu/
-
----
 
 ## 📌 Key Points 
 - [ ] user authentication  
